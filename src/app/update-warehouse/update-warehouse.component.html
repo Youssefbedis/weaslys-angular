@@ -1,0 +1,112 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Update</h4>
+            <p class="category"></p>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <div *ngIf="warehouse">
+                <form (ngSubmit)="updateWarehouse()">
+                  <tr>
+                    <td>
+                      <label for="warehouseId">Warehouse ID:</label>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id="warehouseId"
+                        name="warehouseId"
+                        [(ngModel)]="warehouse.warehouseId"
+                        readonly
+                      />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <label for="warehouseName">Warehouse Name:</label>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id="warehouseName"
+                        name="warehouseName"
+                        [(ngModel)]="warehouse.warehouseName"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label for="location">Location:</label>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        [(ngModel)]="warehouse.location"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label for="capacity">Capacity:</label>
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        id="capacity"
+                        name="capacity"
+                        [(ngModel)]="warehouse.capacity"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label for="email">Email:</label>
+                    </td>
+                    <td>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        [(ngModel)]="warehouse.email"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label for="phoneNumber">Phone Number:</label>
+                    </td>
+                    <td>
+                      <input
+                        type="tel"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        [(ngModel)]="warehouse.phoneNumber"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <button type="submit">Update Warehouse</button>
+                    </td>
+                  </tr>
+                </form>
+              </div>
+
+              <div *ngIf="!warehouse">
+                <p>Loading...</p>
+              </div>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

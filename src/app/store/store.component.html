@@ -1,0 +1,61 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">List of stores</h4>
+            <p class="category"></p>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let store of stores">
+                  <td>{{ store.storeId }}</td>
+                  <td>{{ store.storeName }}</td>
+                  <td>
+                    <button (click)="updateStore(store.storeId)">Modify</button>
+                    <button (click)="deleteStore(store.storeId)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Add new store</h4>
+            <p class="category"></p>
+          </div>
+          <div class="content">
+            <form (ngSubmit)="create()" #storeForm="ngForm">
+              <div class="form-group">
+                <label for="storeName">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="storeName"
+                  required
+                  [(ngModel)]="newStore.storeName"
+                  name="storeName"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
